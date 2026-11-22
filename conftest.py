@@ -1,6 +1,6 @@
 import json
 import os
-
+import uuid
 import pytest
 from utils.driver_factory import launch_browser
 
@@ -19,6 +19,10 @@ def pytest_addoption(parser):
 @pytest.fixture
 def base_url():
     return CONFIG["base_url"]
+
+@pytest.fixture
+def unique_email():
+    return f"ABC{uuid.uuid4().hex[:8]}@gmail.com"
 
 @pytest.fixture
 def driver(request):

@@ -9,7 +9,7 @@ class LoginPage(BasePage):
     SUCCESS_TEXT = by_testid("success-message")
 
     def open_page(self):
-        return self.open("/login")
+        self.open("/login")
 
     def login(self, email, password):
         self.type(self.EMAIL, email)
