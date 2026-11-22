@@ -1,4 +1,5 @@
 from pages.base_page import BasePage, by_testid
+from pages.login_page import LoginPage
 
 
 class RegisterPage(BasePage):
@@ -14,6 +15,7 @@ class RegisterPage(BasePage):
         self.type(self.EMAIL, email)
         self.type(self.PASSWORD, password)
         self.click(self.REGISTER_BTN)
+        return LoginPage(self.driver, self.base_url)
 
     def error_text(self):
         return self.text_of(self.ERROR_TEXT)

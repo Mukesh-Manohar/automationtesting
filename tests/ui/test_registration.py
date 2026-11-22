@@ -7,8 +7,7 @@ from pages.register_page import RegisterPage
 def test_successful_registration_with_valid_credentials(driver, base_url,unique_email):
     register_page = RegisterPage(driver, base_url)
     register_page.open_page()
-    register_page.register(unique_email, "python")
-    login_page = LoginPage(driver, base_url)
+    login_page = register_page.register(unique_email, "python")
     assert login_page.success_text() == "Account created. Please log in."
 
 @pytest.mark.regression

@@ -22,7 +22,7 @@ def base_url():
 
 @pytest.fixture
 def unique_email():
-    return f"ABC{uuid.uuid4().hex[:8]}@gmail.com"
+    return (f"ABC{uuid.uuid4().hex[:8]}@gmail.com")
 
 @pytest.fixture
 def driver(request):
