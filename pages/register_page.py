@@ -10,6 +10,8 @@ class RegisterPage(BasePage):
 
     def open_page(self):
         self.open("/register")
+        return self
+    
 
     def register(self, email, password):
         self.type(self.EMAIL, email)

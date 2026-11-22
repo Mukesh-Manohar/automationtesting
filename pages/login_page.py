@@ -1,3 +1,5 @@
+from tkinter import SEL_FIRST
+
 from pages.base_page import BasePage, by_testid
 
 class LoginPage(BasePage):
